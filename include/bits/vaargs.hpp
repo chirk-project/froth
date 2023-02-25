@@ -1,5 +1,5 @@
 /*
-    <argparser.hpp> -  facing header for argparser.hpp
+    <bits/vaargs.hpp> - common variadic argument operations
     Copyright (C) 2023  Chirk Project
 
     This program is free software: you can redistribute it and/or modify
@@ -16,16 +16,22 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#if !defined(__chirk_froth__argparser_hpp) // argparser.hpp include guard
-#define __chirk_froth__argparser_hpp
+#if !defined(__chirk_froth__bits_vaargs_hpp) // bits/vaargs.hpp include guard
+#define __chirk_froth__bits_vaargs_hpp
 
+template<typename... Ts>
+class n_vaargs_class;
 
-#include <impl/argparser.hpp>
+template<>
+class n_vaargs_class<> {
+public:
+	static constexpr int num = 0;
+};
 
-namespace froth {
-    using arg = __froth_1367::arg;
-    using argparser = __froth_1367::argparser;
+template<typename T, typename... Ts>
+class n_vaargs_class {
+	static constexpr int num = n_vaargs_class<Ts...>::num;
 };
 
 
-#endif // argparser.hpp include guard
+#endif // bits/vaargs.hpp include guard

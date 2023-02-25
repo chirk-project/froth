@@ -1,5 +1,5 @@
 /*
-    <conf/version.hpp> -*- C++ -*-
+    <conf/version.hpp> froth version information
     Copyright (C) 2023  Chirk Project
 
     This program is free software: you can redistribute it and/or modify

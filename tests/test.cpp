@@ -1,10 +1,9 @@
-#include "../include/argparser.hpp"
+//#include "../include/argparser.hpp"
 
 #include <iostream>
+#include <vector>
+
 
 
 int main() {
-    froth::argparser{
-        froth::arg{}
-    };
 }
